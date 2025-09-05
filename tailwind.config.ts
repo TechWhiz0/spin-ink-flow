@@ -61,7 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Creative Portfolio Colors
+				ink: {
+					primary: 'hsl(var(--ink-primary))',
+					secondary: 'hsl(var(--ink-secondary))'
+				},
+				wireframe: 'hsl(var(--wireframe))',
+				highlight: 'hsl(var(--highlight))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

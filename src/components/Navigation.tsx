@@ -10,10 +10,17 @@ const Navigation = () => {
 
   const navItems = [
     { label: "STATUS", href: "#status" },
-    { label: "ABOUT", href: "#about" },
+    { label: "ABOUT", href: "#about-section" },
     { label: "PROJECTS", href: "#projects" },
     { label: "CONTACT", href: "#contact" },
   ];
+
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav 
@@ -31,9 +38,9 @@ const Navigation = () => {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item, index) => (
-            <a
+            <button
               key={item.label}
-              href={item.href}
+              onClick={() => handleNavClick(item.href)}
               className={cn(
                 "text-foreground/80 hover:text-foreground transition-colors duration-300 text-sm font-medium tracking-wider hover-lift",
                 "relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
@@ -41,7 +48,7 @@ const Navigation = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {item.label}/
-            </a>
+            </button>
           ))}
         </div>
 

@@ -14,8 +14,8 @@ const AnimatedFan = () => {
       <div
         className={cn(
           "transition-all duration-1000 transform",
-          isVisible 
-            ? "opacity-100 translate-y-0 scale-100" 
+          isVisible
+            ? "opacity-100 translate-y-0 scale-100"
             : "opacity-0 translate-y-10 scale-95"
         )}
       >
@@ -27,10 +27,10 @@ const AnimatedFan = () => {
         >
           {/* Fan Blades - Rotating */}
           <g className="fan-rotation">
-            <circle 
-              cx="400" 
-              cy="150" 
-              r="8" 
+            <circle
+              cx="400"
+              cy="150"
+              r="8"
               fill="currentColor"
               className="opacity-80"
             />
@@ -60,7 +60,9 @@ const AnimatedFan = () => {
                 stroke="currentColor"
                 strokeWidth="1"
                 className="wireframe-lines opacity-40"
-                transform={`rotate(${angle} ${400 + 50 * Math.cos((angle * Math.PI) / 180)} ${150 + 50 * Math.sin((angle * Math.PI) / 180)})`}
+                transform={`rotate(${angle} ${
+                  400 + 50 * Math.cos((angle * Math.PI) / 180)
+                } ${150 + 50 * Math.sin((angle * Math.PI) / 180)})`}
               />
             ))}
           </g>
@@ -76,7 +78,7 @@ const AnimatedFan = () => {
             strokeWidth="1"
             className="wireframe-lines opacity-50"
           />
-          
+
           {/* Support Structures */}
           <line
             x1="100"
@@ -96,7 +98,7 @@ const AnimatedFan = () => {
             strokeWidth="1"
             className="wireframe-lines opacity-40"
           />
-          
+
           {/* Fan Housing */}
           <circle
             cx="400"
@@ -118,20 +120,65 @@ const AnimatedFan = () => {
           />
 
           {/* Technical Details */}
-          <circle cx="400" cy="150" r="4" fill="currentColor" className="opacity-60" />
-          
+          <circle
+            cx="400"
+            cy="150"
+            r="4"
+            fill="currentColor"
+            className="opacity-60"
+          />
+
           {/* Measurement Lines */}
           <g className="opacity-30">
-            <line x1="320" y1="80" x2="480" y2="80" stroke="currentColor" strokeWidth="0.5" />
-            <line x1="320" y1="75" x2="320" y2="85" stroke="currentColor" strokeWidth="0.5" />
-            <line x1="480" y1="75" x2="480" y2="85" stroke="currentColor" strokeWidth="0.5" />
-            <text x="400" y="70" textAnchor="middle" className="text-xs fill-current opacity-60">160mm</text>
+            <line
+              x1="320"
+              y1="80"
+              x2="480"
+              y2="80"
+              stroke="currentColor"
+              strokeWidth="0.5"
+            />
+            <line
+              x1="320"
+              y1="75"
+              x2="320"
+              y2="85"
+              stroke="currentColor"
+              strokeWidth="0.5"
+            />
+            <line
+              x1="480"
+              y1="75"
+              x2="480"
+              y2="85"
+              stroke="currentColor"
+              strokeWidth="0.5"
+            />
+            <text
+              x="400"
+              y="70"
+              textAnchor="middle"
+              className="text-xs fill-current opacity-60"
+            >
+              160mm
+            </text>
           </g>
 
           {/* Grid Lines */}
           <defs>
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.1"/>
+            <pattern
+              id="grid"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 20 0 L 0 0 0 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.3"
+                opacity="0.1"
+              />
             </pattern>
           </defs>
           <rect width="800" height="300" fill="url(#grid)" />

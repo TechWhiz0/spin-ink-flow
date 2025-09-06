@@ -11,50 +11,58 @@ All colors MUST be HSL.
     /* Creative Portfolio Design System */
     --background: 0 0% 98%;
     --foreground: 0 0% 5%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 0 0% 5%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
-    
+
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
-    
+
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 95%;
-    
+
     --muted: 0 0% 90%;
     --muted-foreground: 0 0% 45%;
-    
+
     --accent: 0 0% 85%;
     --accent-foreground: 0 0% 15%;
-    
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    
+
     --border: 0 0% 88%;
     --input: 0 0% 88%;
     --ring: 0 0% 5%;
-    
+
     --radius: 0.5rem;
-    
+
     /* Custom Creative Variables */
     --ink-primary: 0 0% 0%;
     --ink-secondary: 0 0% 20%;
     --wireframe: 0 0% 60%;
     --highlight: 0 0% 100%;
-    
+
     /* Animation Variables */
     --rotation-slow: 20s;
     --rotation-medium: 12s;
     --rotation-fast: 8s;
     --float-duration: 6s;
-    
+
     /* Gradients */
-    --gradient-ink: radial-gradient(circle, hsl(var(--ink-primary)) 0%, transparent 70%);
-    --gradient-fade: linear-gradient(180deg, transparent 0%, hsl(var(--background)) 100%);
-    
+    --gradient-ink: radial-gradient(
+      circle,
+      hsl(var(--ink-primary)) 0%,
+      transparent 70%
+    );
+    --gradient-fade: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(var(--background)) 100%
+    );
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -117,100 +125,273 @@ All colors MUST be HSL.
 @layer components {
   /* Creative Animation Keyframes */
   @keyframes ink-rotate {
-    0% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(90deg) scale(1.1); }
-    50% { transform: rotate(180deg) scale(1); }
-    75% { transform: rotate(270deg) scale(0.9); }
-    100% { transform: rotate(360deg) scale(1); }
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      transform: rotate(90deg) scale(1.1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1);
+    }
+    75% {
+      transform: rotate(270deg) scale(0.9);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
   }
-  
+
   @keyframes ink-float {
-    0%, 100% { transform: translateY(0px) translateX(0px); }
-    25% { transform: translateY(-20px) translateX(10px); }
-    50% { transform: translateY(0px) translateX(-10px); }
-    75% { transform: translateY(20px) translateX(5px); }
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(0px) translateX(-10px);
+    }
+    75% {
+      transform: translateY(20px) translateX(5px);
+    }
   }
-  
+
   @keyframes fan-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  
+
   @keyframes wireframe-glow {
-    0%, 100% { stroke-opacity: 0.3; }
-    50% { stroke-opacity: 0.8; }
+    0%,
+    100% {
+      stroke-opacity: 0.3;
+    }
+    50% {
+      stroke-opacity: 0.8;
+    }
   }
-  
+
   @keyframes text-reveal {
-    0% { 
-      opacity: 0; 
-      transform: translateY(30px) scale(0.95); 
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
     }
-    100% { 
-      opacity: 1; 
-      transform: translateY(0px) scale(1); 
+    100% {
+      opacity: 1;
+      transform: translateY(0px) scale(1);
     }
   }
-  
+
   @keyframes nav-slide {
-    0% { 
-      opacity: 0; 
-      transform: translateY(-20px); 
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
     }
-    100% { 
-      opacity: 1; 
-      transform: translateY(0px); 
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 
   /* Creative Component Classes */
   .ink-effect {
     animation: ink-rotate var(--rotation-slow) infinite linear,
-               ink-float var(--float-duration) infinite ease-in-out;
+      ink-float var(--float-duration) infinite ease-in-out;
   }
-  
+
   .ink-secondary {
     animation: ink-rotate var(--rotation-medium) infinite linear reverse,
-               ink-float var(--float-duration) infinite ease-in-out 2s;
+      ink-float var(--float-duration) infinite ease-in-out 2s;
   }
-  
+
   .fan-rotation {
     animation: fan-spin var(--rotation-fast) infinite linear;
     transform-origin: center;
   }
-  
+
   .wireframe-lines {
     animation: wireframe-glow 3s infinite ease-in-out;
   }
-  
+
   .text-reveal {
     animation: text-reveal 1.2s ease-out forwards;
   }
-  
+
   .nav-reveal {
     animation: nav-slide 0.8s ease-out forwards;
   }
-  
+
   .hover-lift {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .hover-lift:hover {
     transform: translateY(-2px);
   }
-  
+
   /* Gradient Text Effect */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--muted-foreground)));
+    background: linear-gradient(
+      135deg,
+      hsl(var(--foreground)),
+      hsl(var(--muted-foreground))
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 200%;
     animation: gradient-shift 4s ease infinite;
   }
-  
+
   @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Ice Cream Top Wave Animations */
+  @keyframes curve-wave-1 {
+    0% {
+      d: path(
+        "M0,120 C200,60 400,140 600,80 C800,160 1000,40 1200,100 L1200,0 L0,0 Z"
+      );
+    }
+    25% {
+      d: path(
+        "M0,100 C200,140 400,60 600,120 C800,40 1000,160 1200,80 L1200,0 L0,0 Z"
+      );
+    }
+    50% {
+      d: path(
+        "M0,140 C200,80 400,160 600,100 C800,60 1000,140 1200,120 L1200,0 L0,0 Z"
+      );
+    }
+    75% {
+      d: path(
+        "M0,80 C200,120 400,40 600,140 C800,100 1000,60 1200,140 L1200,0 L0,0 Z"
+      );
+    }
+    100% {
+      d: path(
+        "M0,120 C200,60 400,140 600,80 C800,160 1000,40 1200,100 L1200,0 L0,0 Z"
+      );
+    }
+  }
+
+  @keyframes curve-wave-2 {
+    0% {
+      d: path(
+        "M0,140 C300,80 600,160 900,100 C1050,60 1150,140 1200,120 L1200,0 L0,0 Z"
+      );
+    }
+    33% {
+      d: path(
+        "M0,120 C300,140 600,80 900,120 C1050,100 1150,60 1200,140 L1200,0 L0,0 Z"
+      );
+    }
+    66% {
+      d: path(
+        "M0,160 C300,100 600,140 900,80 C1050,120 1150,100 1200,100 L1200,0 L0,0 Z"
+      );
+    }
+    100% {
+      d: path(
+        "M0,140 C300,80 600,160 900,100 C1050,60 1150,140 1200,120 L1200,0 L0,0 Z"
+      );
+    }
+  }
+
+  @keyframes curve-wave-3 {
+    0% {
+      d: path(
+        "M0,160 C250,100 500,180 750,120 C900,80 1050,160 1200,140 L1200,0 L0,0 Z"
+      );
+    }
+    50% {
+      d: path(
+        "M0,140 C250,160 500,100 750,140 C900,120 1050,80 1200,160 L1200,0 L0,0 Z"
+      );
+    }
+    100% {
+      d: path(
+        "M0,160 C250,100 500,180 750,120 C900,80 1050,160 1200,140 L1200,0 L0,0 Z"
+      );
+    }
+  }
+
+  @keyframes floating-element {
+    0% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px) scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.7;
+    }
+  }
+
+  /* Infinite Scroll Styles */
+  .infinite-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .infinite-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Smooth scroll animation */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom rounded bottom */
+  .rounded-bottom-curve {
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+
+  /* Curved Wave Effect Classes */
+  .animate-curve-wave-1 {
+    animation: curve-wave-1 10s ease-in-out infinite;
+  }
+
+  .animate-curve-wave-2 {
+    animation: curve-wave-2 12s ease-in-out infinite;
+  }
+
+  .animate-curve-wave-3 {
+    animation: curve-wave-3 14s ease-in-out infinite;
+  }
+
+  .animate-floating-element {
+    animation: floating-element 4s ease-in-out infinite;
+  }
+
+  /* Wave Flow Animation */
+  @keyframes wave-flow {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-100px);
+    }
+  }
+
+  .animate-wave-flow {
+    animation: wave-flow 8s ease-in-out infinite;
   }
 }

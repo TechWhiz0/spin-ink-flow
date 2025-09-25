@@ -4,9 +4,9 @@ import InfiniteScrollText from "./InfiniteScrollText";
 
 const ScrollDesign: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="relative overflow-hidden">
       {/* Navigation Elements */}
-      <div className="absolute top-8 left-8 z-10">
+      <div className="absolute left-8 z-10">
         <div className="flex flex-col items-start space-y-2">
           <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
             <ArrowUp className="w-6 h-6 text-white" />

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { GoArrowUpRight } from "react-icons/go";
 
 const Navigation = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,10 +10,9 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: "STATUS", href: "#status" },
     { label: "ABOUT", href: "#about-section" },
     { label: "PROJECTS", href: "#projects" },
-    { label: "CONTACT", href: "#contact" },
+    { label: "CONTACT", href: "#contact", hasArrow: true },
   ];
 
   const handleNavClick = (href: string) => {
@@ -25,17 +25,28 @@ const Navigation = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-background/80 backdrop-blur-sm",
+        "fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-background/80 backdrop-blur-sm",
         isVisible ? "nav-reveal" : "opacity-0"
       )}
     >
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
-        {/* Logo/Name */}
-        <div className="text-foreground font-medium tracking-wide hover-lift">
-          © Raunak Garhyan
+      <div className="flex items-center justify-center max-w-7xl mx-auto">
+        {/* Left side - Logo/Name with STATUS */}
+        <div className="flex items-center gap-6 flex-1">
+          <div className="text-foreground font-medium tracking-wide hover-lift">
+            © Raunak Garhyan
+          </div>
+          <button
+            onClick={() => handleNavClick("#status")}
+            className={cn(
+              "text-foreground/80 hover:text-foreground transition-colors duration-300 text-sm font-medium tracking-wider hover-lift",
+              "relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
+            )}
+          >
+            STATUS/
+          </button>
         </div>
 
-        {/* Navigation Links */}
+        {/* Right side - Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item, index) => (
             <button
@@ -47,7 +58,10 @@ const Navigation = () => {
               )}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {item.label}/
+              <span className="flex items-center gap-1">
+                {item.hasArrow && <GoArrowUpRight className="w-4 h-4" />}
+                {item.label}{item.hasArrow ? "/" : "/"}
+              </span>
             </button>
           ))}
         </div>

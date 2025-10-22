@@ -6,14 +6,12 @@ const ScrollDesign: React.FC = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Navigation Elements */}
-      <div className="absolute left-8 z-10">
+      <div className="absolute left-16 top-8 z-10">
         <div className="flex flex-col items-start space-y-2">
-          <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-            <ArrowUp className="w-6 h-6 text-white" />
-          </div>
+          
           <a
             href="#"
-            className="text-sm text-black underline hover:text-gray-600 transition-colors"
+            className="text-lg text-black underline hover:text-gray-600 transition-colors"
           >
             view archive
           </a>
@@ -45,8 +43,8 @@ const ScrollDesign: React.FC = () => {
           style={{ width: "100vw", maxWidth: "100%" }}
         >
           <InfiniteScrollText
-            text="B— Lorem Ips— Lorem Asuma S"
-            className="text-center"
+            text="STATUS/                    ABOUT/                    PROJECTS/                    CONTACT/"
+            className="text-center whitespace-pre"
           />
         </div>
       </div>

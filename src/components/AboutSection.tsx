@@ -25,14 +25,14 @@ const AboutSection = () => {
   return (
     <section
       id="about-section"
-      className="min-h-screen text-primary-foreground flex items-center justify-center px-6 py-20 relative"
+      className="min-h-[15vh] text-foreground flex items-center justify-center px-6 py-8 relative"
     >
       {/* Wavy Background - Behind the content */}
       <WavyBackground
         className="absolute inset-0 z-0"
-        colors={["#ffffff", "#f3f4f6", "#e5e7eb", "#d1d5db", "#9ca3af"]}
+        colors={["#000000", "#1a1a1a", "#333333", "#4d4d4d", "#666666"]}
         waveWidth={50}
-        backgroundFill="#000000"
+        backgroundFill="#ffffff"
         blur={10}
         speed="fast"
         waveOpacity={0.3}
@@ -48,7 +48,7 @@ const AboutSection = () => {
         >
           {/* About Content */}
           <div className="mb-12">
-            <p className="text-lg md:text-xl leading-relaxed text-primary-foreground/90 font-light">
+            <p className="text-lg md:text-xl leading-relaxed text-foreground/90 font-light">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
               pellentesque quis velit eget dictum. Class aptent taciti sociosqu
               ad litora torquent per conubia nostra, per inceptos himenaeos.
@@ -70,8 +70,8 @@ const AboutSection = () => {
               variant="outline"
               size="lg"
               className={cn(
-                "bg-transparent border-2 border-primary-foreground text-primary-foreground",
-                "hover:bg-primary-foreground hover:text-primary transition-all duration-300",
+                "bg-transparent border-2 border-foreground text-foreground",
+                "hover:bg-foreground hover:text-background transition-all duration-300",
                 "px-8 py-4 text-base font-medium rounded-full",
                 "hover-lift transform hover:scale-105"
               )}

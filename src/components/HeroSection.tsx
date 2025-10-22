@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import InkEffect from "./InkEffect";
-import AnimatedFan from "./AnimatedFan";
+import Orb from "./ui/Orb";
 import { cn } from "@/lib/utils";
 
 const HeroSection = () => {
@@ -13,34 +12,36 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background">
-      {/* Background Ink Effect */}
-      <InkEffect />
-      
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-6xl mx-auto">
-        {/* Hero Text */}
+      <div className="relative flex flex-col items-center justify-center text-center px-6 max-w-6xl mx-auto">
+        {/* Orb Component - Behind the text */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl z-0" style={{ width: '100%', height: '600px' }}>
+          <Orb
+            hoverIntensity={0.5}
+            rotateOnHover={true}
+            hue={240}
+            forceHoverState={false}
+          />
+        </div>
+
+        {/* Hero Text - On top with higher z-index */}
         <div 
           className={cn(
-            "mb-16 transition-all duration-1200 transform",
+            "relative z-50 transition-all duration-1200 transform",
             textVisible 
               ? "opacity-100 translate-y-0" 
               : "opacity-0 translate-y-8"
           )}
         >
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight">
-            <span className="block gradient-text">Creativity is</span>
+            <span className="block text-foreground">Creativity is</span>
             <span className="block text-foreground mt-2">my craft</span>
           </h1>
-        </div>
-
-        {/* Animated Fan */}
-        <div className="w-full max-w-4xl">
-          <AnimatedFan />
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-40">
         <div className="flex flex-col items-center text-muted-foreground">
           <div className="w-px h-12 bg-current opacity-30 mb-2"></div>
           <svg 
@@ -57,25 +58,6 @@ const HeroSection = () => {
             />
           </svg>
         </div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, index) => (
-          <div
-            key={index}
-            className={cn(
-              "absolute w-1 h-1 bg-foreground/20 rounded-full",
-              "animate-pulse"
-            )}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`,
-            }}
-          />
-        ))}
       </div>
     </section>
   );

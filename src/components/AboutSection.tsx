@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/ui/wavy-background";
 
 const AboutSection = () => {
@@ -49,36 +48,10 @@ const AboutSection = () => {
           {/* About Content */}
           <div className="mb-12">
             <p className="text-lg md:text-xl leading-relaxed text-foreground/90 font-light">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              pellentesque quis velit eget dictum. Class aptent taciti sociosqu
-              ad litora torquent per conubia nostra, per inceptos himenaeos.
-              Pellentesque vitae neque velit. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia curae;
+              I'm Raunak Garhyan, a junior at Gunn High School, a graphic designer and HCI enthusiast who is ready to help you with your design needs! Anything from logos, to website designs, to posters, to marketing-related visuals, I can be contracted to work on for you!
             </p>
           </div>
 
-          {/* Call to Action Button */}
-          <div
-            className={cn(
-              "transition-all duration-1200 delay-300 transform",
-              isVisible
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 translate-y-4 scale-95"
-            )}
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              className={cn(
-                "bg-transparent border-2 border-foreground text-foreground",
-                "hover:bg-foreground hover:text-background transition-all duration-300",
-                "px-8 py-4 text-base font-medium rounded-full",
-                "hover-lift transform hover:scale-105"
-              )}
-            >
-              Learn more About Me
-            </Button>
-          </div>
         </div>
 
        

@@ -15,7 +15,11 @@ const Navigation = () => {
     { label: "CONTACT", href: "#contact", hasArrow: true },
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, isContact: boolean = false) => {
+    if (isContact) {
+      window.open('mailto:r2garhyan@gmail.com', '_blank');
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +46,7 @@ const Navigation = () => {
               "relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
             )}
           >
-            STATUS/
+            OPEN/
           </button>
         </div>
 
@@ -51,7 +55,7 @@ const Navigation = () => {
           {navItems.map((item, index) => (
             <button
               key={item.label}
-              onClick={() => handleNavClick(item.href)}
+              onClick={() => handleNavClick(item.href, item.label === "CONTACT")}
               className={cn(
                 "text-foreground/80 hover:text-foreground transition-colors duration-300 text-sm font-medium tracking-wider hover-lift",
                 "relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"

@@ -22,7 +22,11 @@ const Footer: React.FC = () => {
 
           {/* Circular Button with Outline */}
           <div className="flex justify-center mb-16">
-            <button className="w-56 h-56 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group">
+            <button
+              type="button"
+              onClick={() => window.open("mailto:r2garhyan@gmail.com", "_blank")}
+              className="w-56 h-56 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group cursor-pointer"
+            >
               <span className="text-xl font-medium text-white group-hover:text-black transition-colors">
                 Send a Message
               </span>
@@ -31,39 +35,6 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Minimal Social Section */}
-      <div className="px-8 mb-8 pb-12 bg-black relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            {/* Left Label */}
-            <div className="text-xl font-medium uppercase tracking-wider text-white">
-              FIND ME ON SOCIAL
-            </div>
-
-            {/* Social Links with Horizontal Spacing */}
-            <div className="flex gap-8">
-              <a
-                href="#"
-                className="text-xl font-medium uppercase tracking-wider text-white hover:bg-white hover:text-black px-6 py-3 rounded-full transition-all duration-300"
-              >
-                INSTAGRAM
-              </a>
-              <a
-                href="#"
-                className="text-xl font-medium uppercase tracking-wider text-white hover:bg-white hover:text-black px-6 py-3 rounded-full transition-all duration-300"
-              >
-                LINKEDIN
-              </a>
-              <a
-                href="#"
-                className="text-xl font-medium uppercase tracking-wider text-white hover:bg-white hover:text-black px-6 py-3 rounded-full transition-all duration-300"
-              >
-                ARTSTATION
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* White Curved Effect at Bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-white">

@@ -43,7 +43,7 @@ const ScrollDesign: React.FC = () => {
           style={{ width: "100vw", maxWidth: "100%" }}
         >
           <InfiniteScrollText
-            text="STATUS/                    ABOUT/                    PROJECTS/                    CONTACT/"
+            text="OPEN/                    ABOUT/                    PROJECTS/                    CONTACT/"
             className="text-center whitespace-pre"
           />
         </div>

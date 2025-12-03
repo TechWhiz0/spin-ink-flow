@@ -34,8 +34,7 @@ const HeroSection = () => {
           )}
         >
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight">
-            <span className="block text-foreground">Creativity is</span>
-            <span className="block text-foreground mt-2">my craft</span>
+            <span className="block text-foreground">Graphic Design & UI Freelancer</span>
           </h1>
         </div>
       </div>

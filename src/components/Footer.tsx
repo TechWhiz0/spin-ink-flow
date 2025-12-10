@@ -16,9 +16,14 @@ const Footer: React.FC = () => {
           </h2>
 
           {/* Larger Uppercase Text */}
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold uppercase mb-16 text-white tracking-tight leading-none">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold uppercase mb-8 text-white tracking-tight leading-none">
             LET'S CONNECT
           </h1>
+
+          {/* Email Address */}
+          <p className="text-xl md:text-2xl text-white/80 mb-16">
+            r2garhyan@gmail.com
+          </p>
 
           {/* Circular Button with Outline */}
           <div className="flex justify-center mb-16">
@@ -33,12 +38,6 @@ const Footer: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
-
-
-      {/* White Curved Effect at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-white">
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-black rounded-t-[50%]"></div>
       </div>
     </footer>
   );

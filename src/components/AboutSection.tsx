@@ -47,7 +47,7 @@ const AboutSection = () => {
         >
           {/* About Content */}
           <div className="mb-12">
-            <p className="text-lg md:text-xl leading-relaxed text-foreground/90 font-light">
+            <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed text-foreground/90 font-light">
               I'm Raunak Garhyan, a junior at Gunn High School, a graphic designer and HCI enthusiast who is ready to help you with your design needs! Anything from logos, to website designs, to posters, to marketing-related visuals, I can be contracted to work on for you!
             </p>
           </div>
